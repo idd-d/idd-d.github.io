@@ -3,18 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Zihang Li | Academic Homepage</title>
     <style>
         :root {
+            color-scheme: light dark;
             --text-primary: #1a1a1a;
             --text-secondary: #333333;
             --text-muted: #555555;
+            --text-title: #111111;
             --link: #0645ad;
             --link-hover: #0b0080;
             --border: #cccccc;
+            --figure-border: #dddddd;
             --bg: #ffffff;
             --bg-alt: #f7f7f7;
             --accent: #8b0000;
+        }
+
+        /* Follow the system theme, including changes while the page is open. */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #e8e8e8;
+                --text-secondary: #cccccc;
+                --text-muted: #aaaaaa;
+                --text-title: #f2f2f2;
+                --link: #8ab4f8;
+                --link-hover: #b6ceff;
+                --border: #444444;
+                --figure-border: #444444;
+                --bg: #181818;
+                --bg-alt: #242424;
+                --accent: #ff9696;
+            }
         }
 
         * {
@@ -166,6 +187,7 @@
             width: 56px;
             height: 56px;
             object-fit: contain;
+            border-radius: 50%;
             flex-shrink: 0;
             margin-top: 2px;
         }
@@ -227,7 +249,7 @@
         .publication-showcase .pub-figure-side img {
             width: 100%;
             height: auto;
-            border: 1px solid #dddddd;
+            border: 1px solid var(--figure-border);
             border-radius: 6px;
             box-shadow: none;
         }
@@ -250,7 +272,7 @@
         }
 
         .publication-title a {
-            color: #111111;
+            color: var(--text-title);
             text-decoration: none;
         display: inline-block;
             transition: color 0.18s ease, transform 0.18s ease, text-decoration-color 0.18s ease;
@@ -273,7 +295,7 @@
 
         .publication-authors strong {
             font-weight: 600;
-            color: #333333;
+            color: var(--text-secondary);
         }
 
         .publication-venue {
